@@ -1,0 +1,3 @@
+[submodule "meta-rust"]
+	path = meta-rust
+	url = https://github.com/sai-kiran-y/meta-rust.git
