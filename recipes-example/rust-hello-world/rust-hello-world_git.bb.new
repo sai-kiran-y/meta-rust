@@ -1,0 +1,31 @@
+SUMMARY = "A simple Hello Rust program"
+LICENSE = "MIT"
+inherit cargo
+
+SRC_URI = "file://Cargo.toml \
+           file://main.rs"
+
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+S = "${WORKDIR}"
+#CARGO_FLAGS += "--target=arm-unknown-linux-gnueabihf -C target-feature=+v7"
+
+#RDEPENDS_${PN} += "libc"
+
+
+#RDEPENDS_${PN} += "autoconf libgcc"
+# Specify cross-compilation tools
+#CARGO_TARGET = "arm-linux-gnueabihf"
+#CC:append = " arm-linux-gnueabihf-gcc"
+#DEPENDS += "rust-native"
+#RUSTFLAGS = "-C linker=arm-linux-gnueabi-gcc -C target-cpu=armv7-a"
+
+#do_compile() {
+#    cargo build --release --target=armv7-unknown-linux-gnueabihf
+#}
+
+#do_install() {
+#    install -d ${D}${bindir}
+#    #install -m 0755 target/armv7-unknown-linux-gnueabihf/release/hello ${D}${bindir}
+#    install -m 0755 hello-rust ${D}${bindir}
+#}
